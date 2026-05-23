@@ -1,14 +1,14 @@
 import Image from "next/image";
 
 const heroImages = [
-    { src: "/images/hero/heroone.jpg", alt: "Elegant dinner table setting" },
-    { src: "/images/hero/herotwo.jpg", alt: "Couple celebrating with sparklers" },
-    { src: "/images/hero/herothree.jpg", alt: "Reception table with floral details" },
-    { src: "/images/hero/herofour.jpg", alt: "Couple in coordinated attire" },
-    { src: "/images/hero/herofive.jpg", alt: "Bride and groom on grand staircase" },
-    { src: "/images/hero/herosix.jpg", alt: "Ballroom event with hanging decor" },
-    { src: "/images/hero/heroseven.jpg", alt: "Reception tablescape" },
-    { src: "/images/hero/heroeight.jpg", alt: "Couple in formal evening wear" },
+    { src: "/images/Hero/heroone.jpg", alt: "Elegant dinner table setting" },
+    { src: "/images/Hero/herotwo.jpg", alt: "Couple celebrating with sparklers" },
+    { src: "/images/Hero/herothree.jpg", alt: "Reception table with floral details" },
+    { src: "/images/Hero/herofour.jpg", alt: "Couple in coordinated attire" },
+    { src: "/images/Hero/herofive.jpg", alt: "Bride and groom on grand staircase" },
+    { src: "/images/Hero/herosix.jpg", alt: "Ballroom event with hanging decor" },
+    { src: "/images/Hero/heroseven.jpg", alt: "Reception tablescape" },
+    { src: "/images/Hero/heroeight.jpg", alt: "Couple in formal evening wear" },
 ];
 
 export default function Hero() {

@@ -141,7 +141,7 @@ import Link from "next/link";
 
 const portfolioImages = [
   "/images/Portfolio/portfolioone.jpg",
-  "/images/hero/herofour.jpg",
+  "/images/Hero/herofour.jpg",
   "/images/Intro/introfive.jpg",
   "/images/Intro/introsix.jpg",
   "/images/Portfolio/portfoliotwo.jpg",
