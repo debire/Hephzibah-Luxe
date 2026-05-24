@@ -4,6 +4,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import LenisProvider from "@/components/layout/LenisProvider";
+import Footer from "@/components/layout/Footer";
+
 
 
 const editorsNote = localFont({
@@ -58,6 +60,7 @@ export default function RootLayout({
         <LenisProvider>
           <Navbar />
           {children}
+          <Footer />
         </LenisProvider>
       </body>
     </html>

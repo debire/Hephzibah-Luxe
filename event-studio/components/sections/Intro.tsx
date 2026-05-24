@@ -5,11 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 const introImages = [
-  "/images/Hero/herofive.jpg",
-  "/images/Intro/introtwo.jpg",
-  "/images/Intro/introthree.jpg",
-  "/images/Intro/introfour.jpg",
-  "/images/Intro/introfive.jpg",
+  "/images/hero/herofive.jpg",
+  "/images/intro/introtwo.jpg",
+  "/images/intro/introthree.jpg",
+  "/images/intro/introfour.jpg",
+  "/images/intro/introfive.jpg",
 ];
 
 export default function Intro() {
