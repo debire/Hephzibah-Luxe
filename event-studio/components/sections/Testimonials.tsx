@@ -45,7 +45,7 @@ export default function Testimonials() {
     }, []);
 
     return (
-        <section className="bg-secondary text-background py-16 lg:py-16 overflow-hidden">
+        <section className="relative z-40 bg-secondary text-background py-16 lg:py-16 overflow-hidden">
             <div className="px-6 lg:px-12">
                 {/* Slide track */}
                 <div className="relative overflow-hidden">

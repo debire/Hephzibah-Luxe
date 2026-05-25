@@ -47,7 +47,7 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "Your Studio Name",
+  title: "Hephzibah-Luxe",
   description: "Event planning and design studio",
 };
 

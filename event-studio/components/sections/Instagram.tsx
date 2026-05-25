@@ -10,7 +10,7 @@ const instagramImages = [
 
 export default function Instagram() {
   return (
-    <section className="bg-background text-primary py-16 lg:py-24">
+    <section className="relative z-40 bg-background text-primary py-16 lg:py-24">
       <div className="px-6 lg:px-12">
         {/* Top row: heading + button (desktop side-by-side, mobile heading only) */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-10 lg:mb-16">
