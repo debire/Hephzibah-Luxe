@@ -1,11 +1,9 @@
-import InquiryHero from "@/components/sections/inquiry/InquiryHero";
-import Instagram from "@/components/sections/Instagram";
+import InquiryPageClient from "@/components/sections/inquiry/InquiryPageClient";
 
 export default function InquiryPage() {
-    return (
-        <main>
-            <InquiryHero />
-            <Instagram />
-        </main>
-    );
+  return (
+    <main>
+      <InquiryPageClient />
+    </main>
+  );
 }
