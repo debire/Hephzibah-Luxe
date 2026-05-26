@@ -55,14 +55,14 @@ export default function Process() {
     <section className="relative z-40 bg-background py-20 lg:py-28 px-6 lg:px-10 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <h2 className="text-center mb-16 lg:mb-24 text-primary whitespace-nowrap">
-          <span className="font-display font-thin text-[28px] lg:text-[60px] leading-[100%]">
+        <h2 className="text-center mb-16 lg:mb-24 text-primary lg:whitespace-nowrap">
+          <span className="font-display font-thin text-[30px] lg:text-[60px] leading-[100%]">
             A GLIMPSE INTO OUR{" "}
           </span>
-          <span className="font-display font-thin italic text-[28px] lg:text-[60px] leading-[100%]">
+          <span className="font-display font-thin italic text-[30px] lg:text-[60px] leading-[100%]">
             Signature
           </span>
-          <span className="font-display font-thin text-[28px] lg:text-[60px] leading-[100%]">
+          <span className="font-display font-thin text-[30px] lg:text-[60px] leading-[100%]">
             {" "}
             PROCESS
           </span>
@@ -79,9 +79,8 @@ export default function Process() {
               {steps.map((step, i) => (
                 <div
                   key={i}
-                  className={`flex-none w-[280px] lg:w-[350px] ${
-                    i === steps.length - 1 ? "pr-6" : ""
-                  }`}
+                  className={`flex-none w-[280px] lg:w-[350px] ${i === steps.length - 1 ? "pr-6" : ""
+                    }`}
                 >
                   {/* Dot */}
                   <div className="w-6 h-6 rounded-full bg-primary relative z-10 mb-8" />
