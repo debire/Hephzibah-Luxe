@@ -8,9 +8,6 @@ import Marquee from "@/components/sections/Marquee";
 import Testimonials from "@/components/sections/Testimonials";
 import Instagram from "@/components/sections/Instagram";
 
-
-
-
 export default function Home() {
   return (
     <main>
