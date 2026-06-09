@@ -13,9 +13,9 @@ const heroImages = [
 
 export default function Hero() {
     return (
-        <section className="relative w-full h-[55vh] lg:h-[110vh] overflow-hidden bg-primary">
-            {/* Desktop image grid (lg+): 4 top, 4 bottom */}
-            <div className="absolute inset-0 hidden lg:flex flex-col gap-2">
+        <section className="relative w-full h-[55vh] min-h-[440px] lg:h-[100vh] lg:min-h-0 overflow-hidden bg-primary">
+            {/* sm+ (640px+): 4 top, 4 bottom */}
+            <div className="absolute inset-0 hidden sm:flex flex-col gap-2">
                 <div className="flex gap-2 flex-1">
                     {heroImages.slice(0, 4).map((image, i) => (
                         <div key={i} className="relative flex-1 overflow-hidden">
@@ -32,8 +32,8 @@ export default function Hero() {
                 </div>
             </div>
 
-            {/* Mobile image grid: 3 top, 4 bottom */}
-            <div className="absolute inset-0 flex lg:hidden flex-col gap-1">
+            {/* < sm (mobile portrait): 3 top, 4 bottom */}
+            <div className="absolute inset-0 flex sm:hidden flex-col gap-1">
                 <div className="flex gap-1 flex-1 justify-center">
                     {heroImages.slice(0, 3).map((image, i) => (
                         <div key={i} className="relative w-[145px] flex-shrink-0 overflow-hidden">
@@ -50,18 +50,18 @@ export default function Hero() {
                 </div>
             </div>
 
-            {/* Dark overlay at 45% opacity */}
             <div className="absolute inset-0 bg-primary/30" />
 
-            {/* Text content */}
-            <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 pt-48 text-background">
-                <h1 className="font-display font-thin text-center tracking-[-0.02em] text-[32px] leading-[1.1] whitespace-nowrap lg:whitespace-normal lg:text-[100px] lg:leading-[110px] max-w-[1200px]">
-                    <span className="block lg:inline">
-                        ARCHITECTS <em className="italic font-thin mx-2 lg:mx-4">of</em> THOUGHTFUL
-                    </span>{" "}
-                    <span className="block lg:inline">CELEBRATIONS</span>
+            <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 sm:pt-16 md:pt-20 lg:pt-32 xl:pt-40 text-background">
+                <h1 className="font-display font-thin text-center tracking-[-0.02em] text-[28px] leading-[1.2] sm:text-[40px] sm:leading-[1.15] md:text-[54px] md:leading-[1.15] lg:text-[74px] lg:leading-[1.1] xl:text-[96px] xl:leading-[1.1] 2xl:text-[116px] 2xl:leading-[1.1]">
+                    <span className="block whitespace-nowrap">
+                        ARCHITECTS <em className="italic font-thin mx-1 sm:mx-2 lg:mx-3 xl:mx-4">of</em> THOUGHTFUL
+                    </span>
+                    <span className="block whitespace-nowrap">
+                        CELEBRATIONS
+                    </span>
                 </h1>
-                <p className="font-body font-normal text-center uppercase tracking-[-0.01em] text-[11px] leading-[19px] lg:text-[16px] lg:leading-[28px] mt-6 lg:mt-12 max-w-[640px]">
+                <p className="font-body font-normal text-center uppercase tracking-[-0.01em] text-[11px] leading-[19px] sm:text-[12px] sm:leading-[20px] md:text-[13px] md:leading-[22px] lg:text-[16px] lg:leading-[28px] xl:text-[18px] xl:leading-[32px] mt-4 sm:mt-6 lg:mt-10 max-w-[640px] xl:max-w-[740px]">
                     A design-led wedding and event planning & design studio shaping celebrations with intention and grace.
                 </p>
             </div>
