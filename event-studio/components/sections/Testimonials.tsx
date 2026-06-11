@@ -45,7 +45,7 @@ export default function Testimonials() {
     }, []);
 
     return (
-        <section className="relative z-40 bg-secondary text-background py-16 sm:py-20 md:py-24 lg:py-16 xl:py-20 2xl:py-24 overflow-hidden">
+        <section className="relative z-40 bg-secondary text-background py-14 sm:py-16 md:py-20 lg:py-16 xl:py-20 2xl:py-24 overflow-hidden">
             <div className="px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16 2xl:px-20">
                 <div className="relative overflow-hidden">
                     <div
@@ -77,7 +77,7 @@ export default function Testimonials() {
                                         {t.subheader}
                                     </p>
 
-                                    <p className="mt-4 sm:mt-5 md:mt-6 font-body font-light text-background text-[14px] leading-[22px] sm:text-[15px] sm:leading-[24px] md:text-[17px] md:leading-[28px]">
+                                    <p className="mt-4 sm:mt-5 md:mt-6 font-body font-light text-background text-[14px] leading-[22px] sm:text-[15px] sm:leading-[24px] md:text-[18px] md:leading-[28px]">
                                         {t.quote}
                                     </p>
 
