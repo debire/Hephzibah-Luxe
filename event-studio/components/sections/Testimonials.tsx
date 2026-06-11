@@ -45,43 +45,39 @@ export default function Testimonials() {
     }, []);
 
     return (
-        <section className="relative z-40 bg-secondary text-background py-16 lg:py-16 overflow-hidden">
-            <div className="px-6 lg:px-12">
-                {/* Slide track */}
+        <section className="relative z-40 bg-secondary text-background py-16 sm:py-20 md:py-24 lg:py-16 xl:py-20 2xl:py-24 overflow-hidden">
+            <div className="px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16 2xl:px-20">
                 <div className="relative overflow-hidden">
                     <div
                         className="flex transition-transform duration-700 ease-in-out"
                         style={{ transform: `translateX(-${activeIndex * 100}%)` }}
                     >
                         {testimonials.map((t, i) => (
-                            <div
-                                key={i}
-                                className="w-full flex-shrink-0"
-                            >
-                                {/* Mobile layout: image floated left, text wraps */}
+                            <div key={i} className="w-full flex-shrink-0">
+                                {/* Stacked / float layout (< lg): mobile portrait, landscape, iPad */}
                                 <div className="lg:hidden">
-                                    <div className="float-left w-[100px] mr-5 mb-2">
+                                    <div className="float-left w-[110px] sm:w-[130px] md:w-[160px] mr-5 sm:mr-6 md:mr-7 mb-2">
                                         <div className="relative w-full aspect-[3/4] overflow-hidden">
                                             <Image
                                                 src={t.image}
                                                 alt={t.name}
                                                 fill
                                                 className="object-cover"
-                                                sizes="160px"
+                                                sizes="(max-width: 768px) 130px, 160px"
                                                 priority={i === 0}
                                             />
                                         </div>
                                     </div>
 
-                                    <h2 className="font-display font-thin text-[24px] leading-[100%] tracking-[0] text-background pt-3">
+                                    <h2 className="font-display font-thin tracking-[0] text-background text-[24px] sm:text-[28px] md:text-[36px] leading-[100%] pt-3 md:pt-4">
                                         {t.name}
                                     </h2>
 
-                                    <p className="mt-7 font-body font-medium text-[14px] leading-[20px] text-background">
+                                    <p className="mt-7 sm:mt-8 md:mt-10 font-body font-medium text-background text-[14px] leading-[20px] sm:text-[15px] sm:leading-[22px] md:text-[17px] md:leading-[24px]">
                                         {t.subheader}
                                     </p>
 
-                                    <p className="mt-4 font-body font-light text-[14px] leading-[22px] text-background">
+                                    <p className="mt-4 sm:mt-5 md:mt-6 font-body font-light text-background text-[14px] leading-[22px] sm:text-[15px] sm:leading-[24px] md:text-[17px] md:leading-[28px]">
                                         {t.quote}
                                     </p>
 
@@ -89,12 +85,12 @@ export default function Testimonials() {
 
                                     <Link
                                         href={t.href}
-                                        className="group mt-8 inline-flex items-center justify-center gap-3 border border-background px-6 py-3 transition-colors hover:bg-background"
+                                        className="group mt-8 sm:mt-9 md:mt-10 inline-flex items-center justify-center gap-3 border border-background px-6 py-3 md:px-7 md:py-3.5 transition-colors hover:bg-background"
                                     >
-                                        <span className="font-body font-light italic text-[16px] tracking-[0.01em] text-background group-hover:text-secondary transition-colors">
+                                        <span className="font-body font-light italic tracking-[0.01em] text-background group-hover:text-secondary transition-colors text-[16px] sm:text-[17px] md:text-[19px]">
                                             {t.cta}
                                         </span>
-                                        <span className="relative inline-block w-[18px] h-[18px]">
+                                        <span className="relative inline-block w-[18px] h-[18px] md:w-[19px] md:h-[19px]">
                                             <Image
                                                 src="/icons/whitebuttonarrow.svg"
                                                 alt=""
@@ -111,9 +107,9 @@ export default function Testimonials() {
                                     </Link>
                                 </div>
 
-                                {/* Desktop layout: two-column grid */}
-                                <div className="hidden lg:grid grid-cols-2 gap-16 items-start">
-                                    <div className="relative w-full h-[560px] overflow-hidden">
+                                {/* Two-column layout (lg+): laptop, monitor */}
+                                <div className="hidden lg:grid grid-cols-2 gap-16 xl:gap-20 2xl:gap-24 items-stretch">
+                                    <div className="relative w-full min-h-[560px] xl:min-h-[640px] 2xl:min-h-[720px] overflow-hidden">
                                         <Image
                                             src={t.image}
                                             alt={t.name}
@@ -125,26 +121,26 @@ export default function Testimonials() {
                                     </div>
 
                                     <div className="flex flex-col">
-                                        <h2 className="font-display font-thin text-[60px] leading-[100%] tracking-[0] text-background">
+                                        <h2 className="font-display font-thin tracking-[0] text-background text-[44px] xl:text-[52px] 2xl:text-[60px] leading-[100%]">
                                             {t.name}
                                         </h2>
 
-                                        <p className="mt-32 font-body font-medium text-[20px] leading-[25px] text-background">
+                                        <p className="mt-32 xl:mt-36 2xl:mt-40 font-body font-medium text-background text-[20px] leading-[25px] xl:text-[22px] xl:leading-[28px] 2xl:text-[24px] 2xl:leading-[30px]">
                                             {t.subheader}
                                         </p>
 
-                                        <p className="mt-6 font-body font-light text-[20px] leading-[25px] text-background max-w-[560px]">
+                                        <p className="mt-6 xl:mt-7 2xl:mt-8 font-body font-light text-background text-[20px] leading-[25px] xl:text-[22px] xl:leading-[32px] 2xl:text-[24px] 2xl:leading-[36px] max-w-[560px] xl:max-w-[640px] 2xl:max-w-[720px]">
                                             {t.quote}
                                         </p>
 
                                         <Link
                                             href={t.href}
-                                            className="group mt-10 inline-flex items-center justify-center gap-3 self-start border border-background px-6 py-3 transition-colors hover:bg-background"
+                                            className="group mt-10 xl:mt-12 inline-flex items-center justify-center gap-3 self-start border border-background px-6 py-3 xl:px-7 xl:py-3.5 2xl:px-8 2xl:py-4 transition-colors hover:bg-background"
                                         >
-                                            <span className="font-body font-light italic text-[20px] leading-[35px] tracking-[0.01em] text-background group-hover:text-secondary transition-colors">
+                                            <span className="font-body font-light italic tracking-[0.01em] text-background group-hover:text-secondary transition-colors text-[20px] leading-[35px] xl:text-[22px] 2xl:text-[24px]">
                                                 {t.cta}
                                             </span>
-                                            <span className="relative inline-block w-[20px] h-[20px]">
+                                            <span className="relative inline-block w-[20px] h-[20px] xl:w-[22px] xl:h-[22px] 2xl:w-[24px] 2xl:h-[24px]">
                                                 <Image
                                                     src="/icons/whitebuttonarrow.svg"
                                                     alt=""
@@ -167,13 +163,13 @@ export default function Testimonials() {
                 </div>
 
                 {/* Pagination dots */}
-                <div className="flex items-center justify-center gap-3 mt-6 lg:mt-12">
+                <div className="flex items-center justify-center gap-3 mt-6 sm:mt-8 md:mt-10 lg:mt-12 xl:mt-14">
                     {testimonials.map((_, i) => (
                         <button
                             key={i}
                             onClick={() => setActiveIndex(i)}
                             aria-label={`Go to testimonial ${i + 1}`}
-                            className={`h-2.5 w-2.5 rounded-full border border-background transition-colors ${i === activeIndex ? "bg-background" : "bg-[#C4C4C480]"
+                            className={`h-2.5 w-2.5 md:h-3 md:w-3 xl:h-3.5 xl:w-3.5 rounded-full border border-background transition-colors ${i === activeIndex ? "bg-background" : "bg-[#C4C4C480]"
                                 }`}
                         />
                     ))}
