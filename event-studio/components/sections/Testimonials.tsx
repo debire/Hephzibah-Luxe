@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -34,37 +34,107 @@ const testimonials = [
     },
 ];
 
+const SWIPE_THRESHOLD_RATIO = 0.15; // 15% of track width to trigger slide change
+
 export default function Testimonials() {
     const [activeIndex, setActiveIndex] = useState(0);
+    const [isDragging, setIsDragging] = useState(false);
+    const [dragOffset, setDragOffset] = useState(0);
+    const trackRef = useRef<HTMLDivElement>(null);
+    const startXRef = useRef(0);
+    const isDraggingRef = useRef(false);
+    const dragOffsetRef = useRef(0);
 
+    // Autoplay — paused while dragging
     useEffect(() => {
+        if (isDragging) return;
         const interval = setInterval(() => {
             setActiveIndex((prev) => (prev + 1) % testimonials.length);
         }, 10000);
         return () => clearInterval(interval);
+    }, [isDragging]);
+
+    const handlePointerDown = useCallback((e: React.PointerEvent<HTMLDivElement>) => {
+        const target = e.target as HTMLElement;
+        if (target.closest("a, button")) return;
+
+        startXRef.current = e.clientX;
+        dragOffsetRef.current = 0;
+        isDraggingRef.current = true;
+        setIsDragging(true);
+        (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
     }, []);
 
+    const handlePointerMove = useCallback((e: React.PointerEvent<HTMLDivElement>) => {
+        if (!isDraggingRef.current) return;
+        const delta = e.clientX - startXRef.current;
+        dragOffsetRef.current = delta;
+        setDragOffset(delta);
+    }, []);
+
+    const finishDrag = useCallback(() => {
+        if (!isDraggingRef.current) return;
+
+        const trackWidth = trackRef.current?.clientWidth ?? 0;
+        const threshold = trackWidth * SWIPE_THRESHOLD_RATIO;
+        const offset = dragOffsetRef.current;
+
+        if (offset < -threshold) {
+            setActiveIndex((prev) => Math.min(prev + 1, testimonials.length - 1));
+        } else if (offset > threshold) {
+            setActiveIndex((prev) => Math.max(prev - 1, 0));
+        }
+
+        dragOffsetRef.current = 0;
+        setDragOffset(0);
+        isDraggingRef.current = false;
+        setIsDragging(false);
+    }, []);
+
+    const handlePointerUp = useCallback(
+        (e: React.PointerEvent<HTMLDivElement>) => {
+            try {
+                (e.currentTarget as HTMLElement).releasePointerCapture(e.pointerId);
+            } catch {
+                // ignore — capture may have been released already
+            }
+            finishDrag();
+        },
+        [finishDrag]
+    );
+
+    // Compute transform: combine slide index (in %) with drag offset (in px)
+    const transform = `translateX(calc(-${activeIndex * 100}% + ${dragOffset}px))`;
+
     return (
-        <section className="relative z-40 bg-secondary text-background py-14 sm:py-16 md:py-20 lg:py-16 xl:py-20 2xl:py-24 overflow-hidden">
+        <section className="relative z-40 bg-secondary text-background py-16 sm:py-20 md:py-24 lg:py-16 xl:py-20 2xl:py-24 overflow-hidden">
             <div className="px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16 2xl:px-20">
-                <div className="relative overflow-hidden">
+                <div
+                    ref={trackRef}
+                    className="relative overflow-hidden touch-pan-y select-none cursor-grab active:cursor-grabbing"
+                    onPointerDown={handlePointerDown}
+                    onPointerMove={handlePointerMove}
+                    onPointerUp={handlePointerUp}
+                    onPointerCancel={handlePointerUp}
+                >
                     <div
-                        className="flex transition-transform duration-700 ease-in-out"
-                        style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+                        className={`flex ${isDragging ? "" : "transition-transform duration-700 ease-in-out"}`}
+                        style={{ transform }}
                     >
                         {testimonials.map((t, i) => (
                             <div key={i} className="w-full flex-shrink-0">
-                                {/* Stacked / float layout (< lg): mobile portrait, landscape, iPad */}
+                                {/* Stacked / float layout (< lg) */}
                                 <div className="lg:hidden">
-                                    <div className="float-left w-[110px] sm:w-[130px] md:w-[160px] mr-5 sm:mr-6 md:mr-7 mb-2">
-                                        <div className="relative w-full aspect-[3/4] overflow-hidden">
+                                    <div className="float-left w-[140px] sm:w-[160px] md:w-[180px] mr-5 sm:mr-6 md:mr-7 mb-2">
+                                        <div className="relative w-full aspect-[3/4] overflow-hidden pointer-events-none">
                                             <Image
                                                 src={t.image}
                                                 alt={t.name}
                                                 fill
                                                 className="object-cover"
-                                                sizes="(max-width: 768px) 130px, 160px"
+                                                sizes="(max-width: 768px) 160px, 180px"
                                                 priority={i === 0}
+                                                draggable={false}
                                             />
                                         </div>
                                     </div>
@@ -107,9 +177,9 @@ export default function Testimonials() {
                                     </Link>
                                 </div>
 
-                                {/* Two-column layout (lg+): laptop, monitor */}
+                                {/* Two-column layout (lg+) */}
                                 <div className="hidden lg:grid grid-cols-2 gap-16 xl:gap-20 2xl:gap-24 items-stretch">
-                                    <div className="relative w-full min-h-[560px] xl:min-h-[640px] 2xl:min-h-[720px] overflow-hidden">
+                                    <div className="relative w-full min-h-[560px] xl:min-h-[640px] 2xl:min-h-[720px] overflow-hidden pointer-events-none">
                                         <Image
                                             src={t.image}
                                             alt={t.name}
@@ -117,6 +187,7 @@ export default function Testimonials() {
                                             className="object-cover"
                                             sizes="50vw"
                                             priority={i === 0}
+                                            draggable={false}
                                         />
                                     </div>
 
@@ -125,7 +196,7 @@ export default function Testimonials() {
                                             {t.name}
                                         </h2>
 
-                                        <p className="mt-32 xl:mt-36 2xl:mt-40 font-body font-medium text-background text-[20px] leading-[25px] xl:text-[22px] xl:leading-[28px] 2xl:text-[24px] 2xl:leading-[30px]">
+                                        <p className="mt-20 xl:mt-30 2xl:mt-30 font-body font-medium text-background text-[20px] leading-[25px] xl:text-[22px] xl:leading-[28px] 2xl:text-[24px] 2xl:leading-[30px]">
                                             {t.subheader}
                                         </p>
 
