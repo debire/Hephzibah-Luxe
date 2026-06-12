@@ -25,11 +25,11 @@ const points = [
 
 export default function WhyWork() {
   return (
-    <section className="bg-secondary text-background py-16 lg:py-24 overflow-hidden">
-      <div className="px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-10 lg:gap-16 items-start">
-          {/* Image - second on mobile, first on desktop */}
-          <div className="order-2 lg:order-1 relative w-full aspect-[4/5] lg:aspect-auto lg:h-full lg:min-h-[700px] overflow-hidden">
+    <section className="bg-secondary text-background py-16 sm:py-20 md:py-24 lg:py-24 xl:py-28 2xl:py-32 overflow-hidden">
+      <div className="px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16 2xl:px-20">
+        <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-10 lg:gap-10 xl:gap-10 2xl:gap-24 items-start">
+          {/* Image — second on mobile, first on desktop */}
+          <div className="order-2 lg:order-1 relative w-full aspect-[4/5] sm:aspect-[3/4] md:aspect-[5/6] lg:aspect-auto lg:h-full lg:min-h-[700px] xl:min-h-[800px] 2xl:min-h-[900px] overflow-hidden">
             <Image
               src="/images/servicespage/work.jpg"
               alt="Elegant table setting"
@@ -41,32 +41,28 @@ export default function WhyWork() {
 
           {/* Text content */}
           <div className="order-1 lg:order-2 flex flex-col">
-            {/* Heading - sits to the left of the bullet column */}
-            <h2 className="font-display font-thin text-[36px] leading-[42px] lg:text-[60px] lg:leading-[65px] tracking-[0] text-background">
+            <h2 className="font-display font-thin tracking-[0] text-background text-[36px] leading-[42px] sm:text-[44px] sm:leading-[50px] md:text-[52px] md:leading-[58px] lg:text-[60px] lg:leading-[65px] xl:text-[72px] xl:leading-[78px] 2xl:text-[84px] 2xl:leading-[90px]">
               WHY WORK
               <br />
               <em className="italic font-thin">with</em> HEPHZIBAH LUXE?
             </h2>
 
-            {/* Bullet list - indented so the heading visually starts before the checkmark column */}
-            <ul className="mt-10 lg:mt-12 space-y-8 lg:space-y-10 lg:pl-12">
+            <ul className="mt-10 sm:mt-12 md:mt-12 lg:mt-12 xl:mt-14 space-y-8 sm:space-y-9 md:space-y-10 lg:space-y-10 xl:space-y-12 2xl:space-y-14 lg:pl-12 xl:pl-16 2xl:pl-20">
               {points.map((point, i) => (
                 <li key={i}>
-                  {/* Checkmark inline with title */}
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-3 md:gap-4">
                     <Image
                       src="/icons/checkmark.svg"
                       alt=""
-                      width={20}
-                      height={20}
-                      className="flex-shrink-0"
+                      width={26}
+                      height={26}
+                      className="w-[20px] h-[20px] md:w-[22px] md:h-[22px] xl:w-[24px] xl:h-[24px] 2xl:w-[26px] 2xl:h-[26px] flex-shrink-0"
                     />
-                    <h3 className="font-body font-normal text-[16px] leading-[22px] lg:text-[20px] lg:leading-[25px] text-background">
+                    <h3 className="font-body font-normal text-background text-[16px] leading-[22px] sm:text-[17px] sm:leading-[24px] md:text-[18px] md:leading-[26px] lg:text-[20px] lg:leading-[25px] xl:text-[22px] xl:leading-[28px] 2xl:text-[24px] 2xl:leading-[30px]">
                       {point.title}
                     </h3>
                   </div>
-                  {/* Description indented to align under the title */}
-                  <p className="mt-3 pl-8 font-body font-light text-[15px] leading-[24px] lg:text-[18px] lg:leading-[25px] text-background max-w-[580px]">
+                  <p className="mt-3 pl-8 md:pl-9 xl:pl-10 font-body font-light text-background text-[15px] leading-[24px] sm:text-[16px] sm:leading-[26px] md:text-[18px] md:leading-[28px] lg:text-[18px] lg:leading-[25px] xl:text-[20px] xl:leading-[30px] 2xl:text-[22px] 2xl:leading-[32px] max-w-[660px] xl:max-w-[680px] 2xl:max-w-[780px]">
                     {point.description}
                   </p>
                 </li>

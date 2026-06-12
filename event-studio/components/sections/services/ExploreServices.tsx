@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const services = [
     {
-        image: "/images/hero/herofive.jpg",
+        image: "/images/portfoliopage/portfoliotwo.jpg",
         title: "Weddings",
         description:
             "Thoughtfully planned weddings that honour your story, your culture, and your vision — guided with care from the first conversation to the final moment.",
@@ -30,30 +30,30 @@ const services = [
 
 export default function ExploreServices() {
     return (
-        <section className="bg-background py-16 lg:py-24 overflow-hidden">
-            <div className="px-6 lg:px-10">
-                <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
-                    {/* Left: sticky text content - 55% */}
+        <section className="bg-background py-16 sm:py-20 md:py-24 lg:py-18 xl:py-16 2xl:py-32 overflow-hidden">
+            <div className="px-6 sm:px-8 md:px-10 lg:px-10 xl:px-14 2xl:px-20">
+                <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 xl:gap-20 2xl:gap-24">
+                    {/* Left: sticky text content */}
                     <div className="lg:w-[55%] lg:sticky lg:top-32 h-fit flex-shrink-0">
-                        <h2 className="font-display font-thin text-primary mb-8 text-[64px] leading-[1] lg:text-[120px] lg:leading-[1.05] tracking-[0]">
+                        <h2 className="font-display font-thin text-primary mb-8 sm:mb-10 md:mb-10 tracking-[0] text-[50px] leading-[1] sm:text-[60px] sm:leading-[1] md:text-[80px] md:leading-[1] lg:text-[120px] lg:leading-[1.05] xl:text-[100px] xl:leading-[1.05] 2xl:text-[140px] 2xl:leading-[1.05]">
                             <span className="block">EXPLORE</span>
                             <span className="block">
                                 <em className="italic font-thin">our</em> SERVICES
                             </span>
                         </h2>
 
-                        <p className="font-body font-light text-primary text-[15px] leading-[26px] lg:text-[19px] lg:leading-[28px] mb-10 max-w-[560px]">
+                        <p className="font-body font-light text-primary mb-10 xl:mb-12 max-w-[660px] xl:max-w-[640px] 2xl:max-w-[720px] text-[15px] leading-[26px] sm:text-[16px] sm:leading-[28px] md:text-[18px] md:leading-[30px] lg:text-[19px] lg:leading-[28px] xl:text-[21px] xl:leading-[32px] 2xl:text-[23px] 2xl:leading-[34px]">
                             We design celebrations of every kind — weddings, milestones, corporate events, and private gatherings — each approached with the same level of intention and care. From intimate moments to larger-scale occasions, our focus remains on thoughtful planning, seamless flow, and an experience that feels considered from beginning to end.
                         </p>
 
                         <Link
                             href="/inquiry"
-                            className="group inline-flex items-center justify-center gap-6 border border-primary px-6 py-3 transition-colors hover:bg-primary"
+                            className="group inline-flex items-center justify-center gap-6 border border-primary px-6 py-3 xl:px-7 xl:py-3.5 2xl:px-8 2xl:py-4 transition-colors hover:bg-primary"
                         >
-                            <span className="font-body font-light italic text-[18px] lg:text-[20px] tracking-[0.01em] text-primary group-hover:text-background transition-colors">
+                            <span className="font-body font-light italic tracking-[0.01em] text-primary group-hover:text-background transition-colors text-[18px] sm:text-[19px] md:text-[20px] lg:text-[20px] xl:text-[22px] 2xl:text-[24px]">
                                 Send us a message
                             </span>
-                            <span className="relative inline-block w-[20px] h-[20px]">
+                            <span className="relative inline-block w-[20px] h-[20px] xl:w-[22px] xl:h-[22px] 2xl:w-[24px] 2xl:h-[24px]">
                                 <Image
                                     src="/icons/buttonarrow.svg"
                                     alt=""
@@ -70,28 +70,29 @@ export default function ExploreServices() {
                         </Link>
                     </div>
 
-                    {/* Right: horizontal scroll cards - 45% */}
+                    {/* Right: horizontal scroll cards */}
                     <div className="lg:w-[45%] min-w-0">
-                        <div className="flex gap-8 overflow-x-auto pb-2 scrollbar-hide">
+                        <div className="flex gap-8 xl:gap-10 2xl:gap-12 overflow-x-auto pb-2 scrollbar-hide">
                             {services.map((service, i) => (
                                 <div
                                     key={i}
-                                    className={`flex-none w-[300px] md:w-[340px] group ${i % 2 === 0 ? "mt-12 lg:mt-20" : ""
-                                        }`}
+                                    className={`flex-none w-[300px] sm:w-[320px] md:w-[360px] lg:w-[340px] xl:w-[380px] 2xl:w-[420px] group ${
+                                        i % 2 === 0 ? "mt-12 lg:mt-20 xl:mt-24" : ""
+                                    }`}
                                 >
-                                    <div className="relative w-full aspect-[3/4] overflow-hidden mb-6">
+                                    <div className="relative w-full aspect-[3/4] overflow-hidden mb-6 xl:mb-8">
                                         <Image
                                             src={service.image}
                                             alt={service.title}
                                             fill
                                             className="object-cover transition-transform duration-700 group-hover:scale-105"
-                                            sizes="340px"
+                                            sizes="420px"
                                         />
                                     </div>
-                                    <h3 className="font-display font-thin text-primary text-[26px] lg:text-[30px] mb-3 leading-tight tracking-[0]">
+                                    <h3 className="font-display font-thin text-primary mb-3 leading-tight tracking-[0] text-[26px] sm:text-[28px] md:text-[32px] lg:text-[30px] xl:text-[36px] 2xl:text-[40px]">
                                         {service.title}
                                     </h3>
-                                    <p className="font-body font-light text-primary text-[15px] lg:text-[19px] leading-[24px] lg:leading-[28px]">
+                                    <p className="font-body font-light text-primary text-[15px] leading-[24px] sm:text-[16px] sm:leading-[26px] md:text-[18px] md:leading-[28px] lg:text-[19px] lg:leading-[28px] xl:text-[20px] xl:leading-[30px] 2xl:text-[22px] 2xl:leading-[32px]">
                                         {service.description}
                                     </p>
                                 </div>

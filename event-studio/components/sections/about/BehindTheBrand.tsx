@@ -3,23 +3,23 @@ import Image from "next/image";
 export default function BehindTheBrand() {
     return (
         <section className="bg-background text-primary">
-            <div className="px-4 lg:px-8 py-16 lg:py-24">
-                <div className="max-w-7xl mx-auto">
-                    {/* ───── Mobile-only: heading + intro at top ───── */}
-                    <div className="lg:hidden mb-10">
-                        <h2 className="font-display font-thin text-[56px] leading-[50px] tracking-normal">
+            <div className="px-4 sm:px-6 md:px-8 lg:px-8 xl:px-12 2xl:px-16 py-16 sm:py-20 md:py-24 lg:py-24 xl:py-28 2xl:py-32">
+                <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto">
+                    {/* Mobile / landscape / iPad heading */}
+                    <div className="lg:hidden mb-10 sm:mb-12 md:mb-14">
+                        <h2 className="font-display font-thin tracking-normal text-[56px] leading-[50px] sm:text-[68px] sm:leading-[60px] md:text-[84px] md:leading-[76px]">
                             BEHIND
                             <br />
                             <span className="italic">the</span> BRAND
                         </h2>
-                        <p className="mt-6 font-body font-light italic text-[15px] leading-[26px] tracking-[0.02em]">
+                        <p className="mt-6 sm:mt-7 md:mt-8 font-body font-light italic tracking-[0.02em] text-[15px] leading-[26px] sm:text-[16px] sm:leading-[28px] md:text-[18px] md:leading-[30px]">
                             Hephzibah Luxe is founded on the belief that celebrations are more than events — they are expressions of legacy, love, and intention. At the helm are a mother-daughter duo whose combined strengths bring warmth, precision, and unmistakable elegance to every experience.
                         </p>
                     </div>
 
-                    {/* ───── Founder row ───── */}
-                    <div className="grid grid-cols-1 lg:grid-cols-[45fr_55fr] gap-8 lg:gap-14">
-                        <div className="relative w-full aspect-[4/5] lg:aspect-auto">
+                    {/* Founder row */}
+                    <div className="grid grid-cols-1 lg:grid-cols-[45fr_55fr] gap-8 sm:gap-10 md:gap-12 lg:gap-14 xl:gap-16 2xl:gap-20">
+                        <div className="relative w-full aspect-[4/5] sm:aspect-[3/4] md:aspect-[5/6] lg:aspect-auto">
                             <Image
                                 src="/images/aboutpage/founder.jpg"
                                 alt="Winnie O., Founder & CEO"
@@ -30,24 +30,23 @@ export default function BehindTheBrand() {
                         </div>
 
                         <div>
-                            {/* Desktop-only: heading + intro */}
-                            <div className="hidden lg:block mb-10">
-                                <h2 className="font-display font-thin text-[100px] leading-[90px] tracking-normal">
+                            {/* Desktop heading + intro */}
+                            <div className="hidden lg:block mb-10 xl:mb-12 2xl:mb-14">
+                                <h2 className="font-display font-thin tracking-normal text-[100px] leading-[90px] xl:text-[120px] xl:leading-[108px] 2xl:text-[140px] 2xl:leading-[126px]">
                                     BEHIND
                                     <br />
                                     <span className="italic">the</span> BRAND
                                 </h2>
-                                <p className="mt-8 lg:pl-16 font-body font-light italic text-[16px] leading-[26px] tracking-[0.02em] max-w-[610px]">
+                                <p className="mt-8 xl:mt-10 lg:pl-16 xl:pl-20 2xl:pl-24 font-body font-light italic tracking-[0.02em] text-[16px] leading-[26px] xl:text-[18px] xl:leading-[30px] 2xl:text-[20px] 2xl:leading-[34px] max-w-[610px] xl:max-w-[700px] 2xl:max-w-[800px]">
                                     Hephzibah Luxe is founded on the belief that celebrations are more than events — they are expressions of legacy, love, and intention. At the helm are a mother-daughter duo whose combined strengths bring warmth, precision, and unmistakable elegance to every experience.
                                 </p>
                             </div>
 
-                            {/* Slight indent from heading on desktop */}
-                            <div className="lg:pl-16">
-                                <h3 className="font-body font-medium text-[16px] lg:text-[18px] leading-[24px] tracking-[-0.01em]">
+                            <div className="lg:pl-16 xl:pl-20 2xl:pl-24">
+                                <h3 className="font-body font-medium tracking-[-0.01em] text-[16px] leading-[24px] sm:text-[17px] sm:leading-[26px] md:text-[18px] md:leading-[28px] lg:text-[18px] xl:text-[20px] xl:leading-[28px] 2xl:text-[22px] 2xl:leading-[30px]">
                                     Winnie O. | Founder &amp; CEO | Client Experience Curator &amp; On-Site Lead
                                 </h3>
-                                <div className="mt-4 space-y-4 font-body font-light text-[15px] lg:text-[18px] leading-[26px] lg:leading-[30px]">
+                                <div className="mt-4 sm:mt-5 md:mt-6 space-y-4 sm:space-y-5 font-body font-light text-[15px] leading-[26px] sm:text-[16px] sm:leading-[28px] md:text-[18px] md:leading-[30px] lg:text-[18px] lg:leading-[30px] xl:text-[20px] xl:leading-[32px] 2xl:text-[22px] 2xl:leading-[34px]">
                                     <p>
                                         Winnie is the heart of Hephzibah Luxe. With a calm presence and a deeply intuitive approach, she brings reassurance, wisdom, and grace to every celebration. Known for her thoughtful guidance and genuine warmth, Winnie has a gift for making clients feel at ease — even amid the most intricate planning moments. From venue walk-throughs to vendor relationships, she ensures every detail feels personal, considered, and beautifully aligned with your vision.
                                     </p>
@@ -59,9 +58,9 @@ export default function BehindTheBrand() {
                         </div>
                     </div>
 
-                    {/* ───── Co-founder row ───── */}
-                    <div className="mt-16 lg:mt-28 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14">
-                        <div className="relative w-full aspect-[4/5] lg:aspect-auto lg:order-2">
+                    {/* Co-founder row */}
+                    <div className="mt-16 sm:mt-20 md:mt-24 lg:mt-28 xl:mt-32 2xl:mt-36 grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-14 xl:gap-16 2xl:gap-20">
+                        <div className="relative w-full aspect-[4/5] sm:aspect-[3/4] md:aspect-[5/6] lg:aspect-auto lg:order-2">
                             <Image
                                 src="/images/aboutpage/cofounder.jpg"
                                 alt="Tosin O., Co-Founder"
@@ -71,12 +70,11 @@ export default function BehindTheBrand() {
                             />
                         </div>
 
-                        {/* Text: second on mobile, left column on desktop */}
                         <div className="lg:order-1">
-                            <h3 className="font-body font-medium text-[16px] lg:text-[18px] leading-[24px] tracking-[-0.01em]">
+                            <h3 className="font-body font-medium tracking-[-0.01em] text-[16px] leading-[24px] sm:text-[17px] sm:leading-[26px] md:text-[18px] md:leading-[28px] lg:text-[18px] xl:text-[20px] xl:leading-[28px] 2xl:text-[22px] 2xl:leading-[30px]">
                                 Tosin O. | Co-Founder | Strategy, Systems &amp; Creative Direction
                             </h3>
-                            <div className="mt-4 space-y-4 font-body font-light text-[15px] lg:text-[18px] leading-[26px] lg:leading-[30px]">
+                            <div className="mt-4 sm:mt-5 md:mt-6 space-y-4 sm:space-y-5 font-body font-light text-[15px] leading-[26px] sm:text-[16px] sm:leading-[28px] md:text-[18px] md:leading-[30px] lg:text-[18px] lg:leading-[30px] xl:text-[20px] xl:leading-[32px] 2xl:text-[22px] 2xl:leading-[34px]">
                                 <p>
                                     Tosin is the mind behind the seamlessness. Detail-driven and design-led, she brings structure, clarity, and strategic oversight to every celebration. With a background in digital management and a deep love for intentional design, Tosin ensures that timelines flow, communication remains effortless, and nothing is left to chance. Her approach blends creative vision with operational excellence — allowing beauty and precision to coexist effortlessly.
                                 </p>
@@ -85,11 +83,11 @@ export default function BehindTheBrand() {
                                 </p>
                             </div>
 
-                            <div className="mt-8">
-                                <p className="font-body font-semibold italic text-[15px] lg:text-[18px] leading-[26px]">
+                            <div className="mt-8 sm:mt-9 md:mt-10 xl:mt-12">
+                                <p className="font-body font-semibold italic text-[15px] leading-[26px] sm:text-[16px] sm:leading-[28px] md:text-[18px] md:leading-[30px] lg:text-[18px] lg:leading-[26px] xl:text-[20px] xl:leading-[30px] 2xl:text-[22px] 2xl:leading-[32px]">
                                     One Vision. Two Perspectives. Elegance in Every Element.
                                 </p>
-                                <p className="mt-4 font-body font-light italic text-[14px] lg:text-[16px] leading-[24px] lg:leading-[26px] tracking-[0.02em]">
+                                <p className="mt-4 sm:mt-5 font-body font-light italic tracking-[0.02em] text-[14px] leading-[24px] sm:text-[15px] sm:leading-[26px] md:text-[17px] md:leading-[28px] lg:text-[16px] lg:leading-[26px] xl:text-[18px] xl:leading-[30px] 2xl:text-[20px] 2xl:leading-[32px]">
                                     A partnership rooted in trust, perspective, and a shared commitment to excellence. Together, Winnie and Tosin create celebrations that ARE thoughtful, refined, and deeply meaningful — where every element is considered, every moment intentional, and every experience elevated.
                                 </p>
                             </div>
