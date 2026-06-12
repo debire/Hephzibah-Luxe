@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const services = [
     {
-        image: "/images/hero/herofive.jpg",
+        image: "/images/portfoliopage/portfoliotwo.jpg",
         title: "Weddings",
         description:
             "Thoughtfully planned weddings that honour your story, your culture, and your vision — guided with care from the first conversation to the final moment.",
