@@ -47,10 +47,10 @@ export default function Transformations() {
   return (
     <>
       {transformations.map((item, index) => (
-        <section key={index} className="bg-[#EEEEEE] py-10 lg:py-12">
-          <div className="max-w-7xl mx-auto px-6 lg:px-10">
-            <div className="grid grid-cols-1 lg:grid-cols-10 gap-12 lg:gap-16 items-start">
-              {/* Text column - on desktop alternates left/right based on sliderOnRight */}
+        <section key={index} className="bg-[#EEEEEE] py-10 sm:py-12 md:py-14 lg:py-12 xl:py-16 2xl:py-20">
+          <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-6 sm:px-8 md:px-10 lg:px-10 xl:px-14 2xl:px-20">
+            <div className="grid grid-cols-1 lg:grid-cols-10 gap-12 lg:gap-16 xl:gap-20 2xl:gap-24 items-start">
+              {/* Text column */}
               <div
                 className={`lg:col-span-6 ${
                   item.sliderOnRight ? "lg:order-1" : "lg:order-2"
@@ -58,7 +58,7 @@ export default function Transformations() {
               >
                 {/* Location */}
                 <p
-                  className={`font-sans font-light text-primary text-[12px] lg:text-[15px] tracking-wider mb-2 ${
+                  className={`font-sans font-light text-primary tracking-wider mb-2 text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] 2xl:text-[17px] ${
                     item.sliderOnRight ? "text-left" : "lg:text-right text-left"
                   }`}
                 >
@@ -67,15 +67,15 @@ export default function Transformations() {
 
                 {/* Subtitle */}
                 <h3
-                  className={`font-display font-thin text-primary text-[24px] lg:text-[40px] leading-[1.2] lg:leading-[48px] mb-8 lg:mb-12 ${
+                  className={`font-display font-thin text-primary mb-8 sm:mb-10 md:mb-12 lg:mb-12 xl:mb-14 text-[24px] leading-[1.2] sm:text-[28px] sm:leading-[1.2] md:text-[34px] md:leading-[1.2] lg:text-[40px] lg:leading-[48px] xl:text-[46px] xl:leading-[56px] 2xl:text-[52px] 2xl:leading-[62px] ${
                     item.sliderOnRight ? "text-left" : "lg:text-right text-left"
                   }`}
                 >
                   {item.subtitle}
                 </h3>
 
-                {/* Mobile-only slider, sits between subtitle and big title */}
-                <div className="lg:hidden mb-10">
+                {/* Mobile/landscape/iPad slider, sits between subtitle and big title */}
+                <div className="lg:hidden mb-10 sm:mb-12 md:mb-14">
                   <ComparisonSlider
                     beforeImg={item.beforeImg}
                     afterImg={item.afterImg}
@@ -83,7 +83,7 @@ export default function Transformations() {
                 </div>
 
                 {/* Big title */}
-                <h2 className="font-display font-thin text-primary text-[44px] lg:text-[92px] leading-[1.05] lg:leading-[92px] text-center mb-8 lg:mb-10">
+                <h2 className="font-display font-thin text-primary text-center mb-8 sm:mb-10 md:mb-10 lg:mb-10 xl:mb-12 text-[44px] leading-[1.05] sm:text-[56px] sm:leading-[1.05] md:text-[72px] md:leading-[1.05] lg:text-[92px] lg:leading-[92px] xl:text-[108px] xl:leading-[108px] 2xl:text-[124px] 2xl:leading-[124px]">
                   {item.title.split("\n").map((line, i) => (
                     <span key={i} className="block">
                       {line}
@@ -92,12 +92,12 @@ export default function Transformations() {
                 </h2>
 
                 {/* Description */}
-                <p className="font-body font-light text-primary text-[14px] lg:text-[20px] leading-[24px] lg:leading-[28.8px] text-center">
+                <p className="font-body font-light text-primary text-center text-[14px] leading-[24px] sm:text-[15px] sm:leading-[26px] md:text-[17px] md:leading-[28px] lg:text-[20px] lg:leading-[28.8px] xl:text-[22px] xl:leading-[32px] 2xl:text-[24px] 2xl:leading-[34px] max-w-[800px] xl:max-w-[920px] 2xl:max-w-[1040px] mx-auto">
                   {item.description}
                 </p>
               </div>
 
-              {/* Desktop-only slider column */}
+              {/* Desktop slider column */}
               <div
                 className={`hidden lg:block lg:col-span-4 ${
                   item.sliderOnRight ? "lg:order-2" : "lg:order-1"

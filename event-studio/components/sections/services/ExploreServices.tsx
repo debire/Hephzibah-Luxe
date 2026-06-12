@@ -1,9 +1,12 @@
+"use client";
+
+import { useRef, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 const services = [
     {
-        image: "/images/portfoliopage/portfoliotwo.jpg",
+        image: "/images/hero/herofive.jpg",
         title: "Weddings",
         description:
             "Thoughtfully planned weddings that honour your story, your culture, and your vision — guided with care from the first conversation to the final moment.",
@@ -29,6 +32,62 @@ const services = [
 ];
 
 export default function ExploreServices() {
+    const scrollRef = useRef<HTMLDivElement>(null);
+    const isDraggingRef = useRef(false);
+    const startXRef = useRef(0);
+    const startScrollLeftRef = useRef(0);
+    const movedRef = useRef(false);
+
+    const handlePointerDown = useCallback((e: React.PointerEvent<HTMLDivElement>) => {
+        // Let native scrolling handle touch input (preserves momentum / elastic feel)
+        if (e.pointerType === "touch") return;
+
+        // Don't initiate a drag on interactive elements
+        const target = e.target as HTMLElement;
+        if (target.closest("a, button")) return;
+
+        const container = scrollRef.current;
+        if (!container) return;
+
+        isDraggingRef.current = true;
+        movedRef.current = false;
+        startXRef.current = e.clientX;
+        startScrollLeftRef.current = container.scrollLeft;
+        container.setPointerCapture(e.pointerId);
+    }, []);
+
+    const handlePointerMove = useCallback((e: React.PointerEvent<HTMLDivElement>) => {
+        if (!isDraggingRef.current) return;
+        const container = scrollRef.current;
+        if (!container) return;
+
+        const delta = e.clientX - startXRef.current;
+        if (Math.abs(delta) > 4) movedRef.current = true;
+        container.scrollLeft = startScrollLeftRef.current - delta;
+    }, []);
+
+    const handlePointerUp = useCallback((e: React.PointerEvent<HTMLDivElement>) => {
+        if (!isDraggingRef.current) return;
+        const container = scrollRef.current;
+        if (container) {
+            try {
+                container.releasePointerCapture(e.pointerId);
+            } catch {
+                // capture may have been released already
+            }
+        }
+        isDraggingRef.current = false;
+    }, []);
+
+    // Suppress accidental clicks at the end of a drag
+    const handleClickCapture = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+        if (movedRef.current) {
+            e.preventDefault();
+            e.stopPropagation();
+            movedRef.current = false;
+        }
+    }, []);
+
     return (
         <section className="bg-background py-16 sm:py-20 md:py-24 lg:py-18 xl:py-16 2xl:py-32 overflow-hidden">
             <div className="px-6 sm:px-8 md:px-10 lg:px-10 xl:px-14 2xl:px-20">
@@ -72,7 +131,15 @@ export default function ExploreServices() {
 
                     {/* Right: horizontal scroll cards */}
                     <div className="lg:w-[45%] min-w-0">
-                        <div className="flex gap-8 xl:gap-10 2xl:gap-12 overflow-x-auto pb-2 scrollbar-hide">
+                        <div
+                            ref={scrollRef}
+                            className="flex gap-8 xl:gap-10 2xl:gap-12 overflow-x-auto pb-2 scrollbar-hide select-none cursor-grab active:cursor-grabbing"
+                            onPointerDown={handlePointerDown}
+                            onPointerMove={handlePointerMove}
+                            onPointerUp={handlePointerUp}
+                            onPointerCancel={handlePointerUp}
+                            onClickCapture={handleClickCapture}
+                        >
                             {services.map((service, i) => (
                                 <div
                                     key={i}
@@ -80,13 +147,14 @@ export default function ExploreServices() {
                                         i % 2 === 0 ? "mt-12 lg:mt-20 xl:mt-24" : ""
                                     }`}
                                 >
-                                    <div className="relative w-full aspect-[3/4] overflow-hidden mb-6 xl:mb-8">
+                                    <div className="relative w-full aspect-[3/4] overflow-hidden mb-6 xl:mb-8 pointer-events-none">
                                         <Image
                                             src={service.image}
                                             alt={service.title}
                                             fill
                                             className="object-cover transition-transform duration-700 group-hover:scale-105"
                                             sizes="420px"
+                                            draggable={false}
                                         />
                                     </div>
                                     <h3 className="font-display font-thin text-primary mb-3 leading-tight tracking-[0] text-[26px] sm:text-[28px] md:text-[32px] lg:text-[30px] xl:text-[36px] 2xl:text-[40px]">
