@@ -33,24 +33,37 @@ export default function GalleryRowRenderer({ row }: { row: GalleryRow }) {
   }
 
   // 2 images
-  if (count === 2) {
-    const gridStyle = row.ratios
-      ? { gridTemplateColumns: `${row.ratios[0]}fr ${row.ratios[1]}fr` }
-      : undefined;
+if (count === 2) {
+  const gridStyle = row.ratios
+    ? { gridTemplateColumns: `${row.ratios[0]}fr ${row.ratios[1]}fr` }
+    : undefined;
 
-    return (
-      <div
-        className={`grid gap-2 lg:gap-3 items-stretch ${!gridStyle ? "grid-cols-2" : ""}`}
-        style={gridStyle}
-      >
-        {row.images.map((src, i) => (
-          <div key={i} className="relative w-full aspect-[3/4] lg:aspect-[4/3] overflow-hidden">
-            <Image src={src} alt="" fill className="object-cover" sizes="50vw" />
-          </div>
-        ))}
-      </div>
-    );
-  }
+  const isRatioRow = !!row.ratios;
+
+  // 50/50 rows use aspect ratio on each image (both same width, so same height).
+  // Ratio rows use a fixed responsive height on the row, with images filling that height.
+  return (
+    <div
+      className={`grid gap-2 lg:gap-3 items-stretch ${!gridStyle ? "grid-cols-2" : ""} ${
+        isRatioRow
+          ? "h-[260px] sm:h-[320px] md:h-[400px] lg:h-[440px] xl:h-[500px] 2xl:h-[560px]"
+          : ""
+      }`}
+      style={gridStyle}
+    >
+      {row.images.map((src, i) => (
+        <div
+          key={i}
+          className={`relative w-full overflow-hidden ${
+            isRatioRow ? "h-full" : "aspect-[3/4] lg:aspect-[4/3]"
+          }`}
+        >
+          <Image src={src} alt="" fill className="object-cover" sizes="50vw" />
+        </div>
+      ))}
+    </div>
+  );
+}
 
   // 3 images — 2+1 stacked until laptop, 3 columns on laptop+
   return (
