@@ -58,7 +58,7 @@ export default function PortfolioEvents() {
               Your Celebration Could Be The Next Story We Tell
             </h3>
             <p className="mt-6 sm:mt-7 md:mt-8 font-body font-light italic text-primary text-[15px] leading-[26px] sm:text-[16px] sm:leading-[28px] md:text-[18px] md:leading-[30px] lg:text-[17px] lg:leading-[28px] xl:text-[19px] xl:leading-[32px] 2xl:text-[21px] 2xl:leading-[34px] max-w-[560px] xl:max-w-[640px] 2xl:max-w-[720px]">
-              We design {activeFilter === "Social Events" ? "social events" : activeFilter.toLowerCase()} with intention, warmth, and refined detail — always centred around you. Ready to Begin? Let&apos;s create something amazing
+              We design {activeFilter === "Social Events" ? "social events" : activeFilter.toLowerCase()} {" "} with intention, warmth, and refined detail — always centred around you. Ready to Begin? Let&apos;s create something amazing
             </p>
 
             <Link
