@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -5,27 +7,27 @@ export default function AboutTestimonial() {
     return (
         <section className="relative bg-secondary text-background py-16 sm:py-20 md:py-24 lg:py-32 xl:py-36 2xl:py-40 overflow-hidden">
             {/* Top-left edge image */}
-<div className="absolute -left-30 top-10 w-[160px] h-[180px] sm:-left-28 sm:top-12 sm:w-[180px] sm:h-[220px] md:-left-24 md:top-16 md:w-[220px] md:h-[280px] lg:left-0 lg:top-16 lg:w-[130px] lg:h-[320px] xl:w-[180px] xl:h-[420px] 2xl:w-[220px] 2xl:h-[500px]">
-    <Image
-        src="/images/aboutpage/aboutfour.jpg"
-        alt=""
-        fill
-        className="object-cover"
-        sizes="220px"
-        priority
-    />
-</div>
+            <div className="absolute -left-30 top-10 w-[160px] h-[180px] sm:-left-28 sm:top-12 sm:w-[180px] sm:h-[220px] md:-left-24 md:top-16 md:w-[220px] md:h-[280px] lg:left-0 lg:top-16 lg:w-[130px] lg:h-[320px] xl:w-[180px] xl:h-[420px] 2xl:w-[220px] 2xl:h-[500px]">
+                <Image
+                    src="/images/aboutpage/aboutfour.jpg"
+                    alt=""
+                    fill
+                    className="object-cover"
+                    sizes="220px"
+                    priority
+                />
+            </div>
 
-{/* Bottom-right edge image */}
-<div className="absolute -right-30 bottom-10 w-[160px] h-[200px] sm:-right-28 sm:bottom-12 sm:w-[180px] sm:h-[240px] md:-right-24 md:bottom-16 md:w-[220px] md:h-[300px] lg:right-0 lg:bottom-16 lg:w-[130px] lg:h-[320px] xl:w-[180px] xl:h-[420px] 2xl:w-[220px] 2xl:h-[500px]">
-    <Image
-        src="/images/aboutpage/aboutfive.jpg"
-        alt=""
-        fill
-        className="object-cover"
-        sizes="220px"
-    />
-</div>
+            {/* Bottom-right edge image */}
+            <div className="absolute -right-30 bottom-10 w-[160px] h-[200px] sm:-right-28 sm:bottom-12 sm:w-[180px] sm:h-[240px] md:-right-24 md:bottom-16 md:w-[220px] md:h-[300px] lg:right-0 lg:bottom-16 lg:w-[130px] lg:h-[320px] xl:w-[180px] xl:h-[420px] 2xl:w-[220px] 2xl:h-[500px]">
+                <Image
+                    src="/images/aboutpage/aboutfive.jpg"
+                    alt=""
+                    fill
+                    className="object-cover"
+                    sizes="220px"
+                />
+            </div>
 
             {/* Content */}
             <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 md:px-12 lg:pl-[180px] lg:pr-[80px] xl:pl-[240px] xl:pr-[140px] 2xl:pl-[280px] 2xl:pr-[160px]">
@@ -41,6 +43,12 @@ export default function AboutTestimonial() {
                     <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 items-start">
                         <Link
                             href="/portfolio"
+                            onClick={(e) => {
+                                if (window.location.pathname === "/portfolio") {
+                                    e.preventDefault();
+                                    window.scrollTo({ top: 0, behavior: "smooth" });
+                                }
+                            }}
                             className="group inline-flex items-center gap-6 lg:gap-8 border border-background px-6 lg:px-8 py-2.5 lg:py-3 transition-colors hover:bg-background"
                         >
                             <span className="font-body font-light italic text-background group-hover:text-secondary transition-colors text-[16px] leading-[28px] md:text-[18px] md:leading-[30px] lg:text-[20px] lg:leading-[35px] xl:text-[22px] 2xl:text-[24px]">

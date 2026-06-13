@@ -4,11 +4,11 @@ import type { GalleryRow } from "@/data/portfolio";
 export default function GalleryRowRenderer({ row }: { row: GalleryRow }) {
   if (row.type === "testimonial") {
     return (
-      <div className="my-8 lg:my-16 px-4 lg:px-12 max-w-[1100px] mx-auto text-center">
-        <blockquote className="font-display font-thin text-primary text-[20px] leading-[32px] lg:text-[42px] lg:leading-[60px] tracking-[0.01em]">
+      <div className="my-8 sm:my-10 md:my-12 lg:my-16 xl:my-20 2xl:my-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-[1100px] xl:max-w-[1280px] 2xl:max-w-[1440px] mx-auto text-center">
+        <blockquote className="font-display font-thin tracking-[0.01em] text-primary text-[20px] leading-[32px] sm:text-[22px] sm:leading-[34px] md:text-[28px] md:leading-[42px] lg:text-[42px] lg:leading-[60px] xl:text-[48px] xl:leading-[66px] 2xl:text-[54px] 2xl:leading-[72px]">
           &ldquo;{row.quote}&rdquo;
         </blockquote>
-        <p className="mt-6 font-sans font-light text-[11px] lg:text-[13px] tracking-[0.2em] uppercase text-primary">
+        <p className="mt-6 sm:mt-7 md:mt-8 font-sans font-light tracking-[0.2em] uppercase text-primary text-[11px] sm:text-[12px] md:text-[13px] lg:text-[13px] xl:text-[14px] 2xl:text-[15px]">
           — {row.attribution}
         </p>
       </div>
@@ -52,7 +52,7 @@ export default function GalleryRowRenderer({ row }: { row: GalleryRow }) {
     );
   }
 
-  // 3 images — 2+1 stacked on mobile, 3 columns on desktop
+  // 3 images — 2+1 stacked until laptop, 3 columns on laptop+
   return (
     <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-3">
       {row.images.map((src, i) => (
