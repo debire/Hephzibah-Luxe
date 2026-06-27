@@ -1,7 +1,7 @@
-<svg width="440" height="956" viewBox="0 0 440 956" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<rect x="-141.537" y="487.073" width="564.347" height="211.63" transform="rotate(-53.7216 -141.537 487.073)" fill="url(#pattern0_2067_45243)"/>
-<path d="M263.217 88.4843C278.225 89.9687 149.574 -126.238 233.472 -247.278C317.369 -368.317 506.358 -294.187 506.358 -294.187" stroke="#062025" stroke-width="3"/>
-<path d="M-43.4836 554.668C-34.4807 601.018 5.11022 657.606 -22.3123 709.124C-49.7348 760.642 -152.648 751.827 -195.717 808.269C-238.785 864.71 -221.143 959.15 -221.143 959.15" stroke="#092D35" stroke-width="3"/>
+<svg width="1144" height="1375" viewBox="0 0 1144 1375" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect x="359.685" y="895.04" width="564.347" height="211.63" transform="rotate(-53.7216 359.685 895.04)" fill="url(#pattern0_2067_45243)"/>
+<path d="M764.438 496.452C779.447 497.936 650.796 281.729 734.693 160.689C818.591 39.6499 1007.58 113.78 1007.58 113.78" stroke="#062025" stroke-width="3"/>
+<path d="M457.738 962.635C466.741 1008.99 506.332 1065.57 478.909 1117.09C451.487 1168.61 348.573 1159.79 305.505 1216.24C262.437 1272.68 280.078 1367.12 280.078 1367.12" stroke="#092D35" stroke-width="3"/>
 <defs>
 <pattern id="pattern0_2067_45243" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0_2067_45243" transform="scale(0.0015625 0.00416667)"/>
