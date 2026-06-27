@@ -17,6 +17,7 @@
   
   --animate-rotate-slow: rotate-slow 20s linear infinite;
 
+  --breakpoint-lg: 1025px;
 }
 
 @keyframes rotate-slow {

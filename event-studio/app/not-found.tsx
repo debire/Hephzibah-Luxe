@@ -73,7 +73,7 @@ export default function NotFound() {
         alt=""
         width={900}
         height={1100}
-        className="lg:hidden absolute -top-24 -left-32 w-[900px] h-auto sm:-top-28 sm:-left-28 sm:w-[900px] md:-top-72 md:-left-60 md:w-[1200px] pointer-events-none"
+        className="lg:hidden absolute -top-24 -left-32 w-[900px] h-auto sm:-top-28 sm:-left-28 sm:w-[900px] md:-top-72 md:-left-64 md:w-[1200px] pointer-events-none"
       />
 
       {/* Main content */}
