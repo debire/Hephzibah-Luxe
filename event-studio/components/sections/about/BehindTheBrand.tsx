@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function BehindTheBrand() {
     return (
-        <section className="bg-background text-primary">
+        <section className="bg-background text-primary overflow-x-hidden">
             <div className="px-4 sm:px-6 md:px-8 lg:px-8 xl:px-12 2xl:px-16 py-16 sm:py-20 md:py-24 lg:py-24 xl:py-28 2xl:py-32">
                 <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto">
                     {/* Mobile / landscape / iPad heading */}
@@ -19,7 +19,7 @@ export default function BehindTheBrand() {
 
                     {/* Founder row */}
                     <div className="grid grid-cols-1 lg:grid-cols-[45fr_55fr] gap-8 sm:gap-10 md:gap-12 lg:gap-14 xl:gap-16 2xl:gap-20">
-                        <div className="relative w-full aspect-[4/5] sm:aspect-[3/4] md:aspect-[5/6] lg:aspect-auto">
+                        <div className="relative w-full min-w-0 aspect-[4/5] sm:aspect-[3/4] md:aspect-[5/6] lg:aspect-auto lg:h-full lg:min-h-full">
                             <Image
                                 src="/images/aboutpage/founder.jpg"
                                 alt="Winnie O., Founder & CEO"
@@ -29,7 +29,7 @@ export default function BehindTheBrand() {
                             />
                         </div>
 
-                        <div>
+                        <div className="min-w-0">
                             {/* Desktop heading + intro */}
                             <div className="hidden lg:block mb-10 xl:mb-12 2xl:mb-14">
                                 <h2 className="font-display font-thin tracking-normal text-[100px] leading-[90px] xl:text-[120px] xl:leading-[108px] 2xl:text-[140px] 2xl:leading-[126px]">
@@ -60,7 +60,7 @@ export default function BehindTheBrand() {
 
                     {/* Co-founder row */}
                     <div className="mt-16 sm:mt-20 md:mt-24 lg:mt-28 xl:mt-32 2xl:mt-36 grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-14 xl:gap-16 2xl:gap-20">
-                        <div className="relative w-full aspect-[4/5] sm:aspect-[3/4] md:aspect-[5/6] lg:aspect-auto lg:order-2">
+                        <div className="relative w-full min-w-0 aspect-[4/5] sm:aspect-[3/4] md:aspect-[5/6] lg:aspect-auto lg:h-full lg:min-h-full lg:order-2">
                             <Image
                                 src="/images/aboutpage/cofounder.jpg"
                                 alt="Tosin O., Co-Founder"
@@ -70,7 +70,7 @@ export default function BehindTheBrand() {
                             />
                         </div>
 
-                        <div className="lg:order-1">
+                        <div className="min-w-0 lg:order-1">
                             <h3 className="font-body font-medium tracking-[-0.01em] text-[16px] leading-[24px] sm:text-[17px] sm:leading-[26px] md:text-[18px] md:leading-[28px] lg:text-[18px] xl:text-[20px] xl:leading-[28px] 2xl:text-[22px] 2xl:leading-[30px]">
                                 Tosin O. | Co-Founder | Strategy, Systems &amp; Creative Direction
                             </h3>
