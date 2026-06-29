@@ -32,7 +32,6 @@ function HeadingBlock({ color }: { color: "primary" | "background" }) {
   );
 }
 
-// Mobile headings — placed once in dark, overlaid in white where they cross images
 function MobileHeadings({ color }: { color: "primary" | "background" }) {
   const cls = color === "primary" ? "text-primary" : "text-background";
   return (
@@ -54,7 +53,7 @@ function MobileHeadings({ color }: { color: "primary" | "background" }) {
 export default function AboutHero() {
   return (
     <section className="relative w-full overflow-hidden bg-background">
-      {/* ─────────────── Desktop ─────────────── */}
+      {/* ─────────────── Desktop (unchanged) ─────────────── */}
       <div className="hidden lg:block relative">
         <div className="relative mx-auto" style={{ width: W, height: H }}>
           <HeadingBlock color="primary" />
@@ -74,35 +73,26 @@ export default function AboutHero() {
             </p>
           </div>
 
-          {/* Left image + white-text overlay */}
           <div
             className="absolute overflow-hidden"
             style={{ top: POS.leftImg.top, left: POS.leftImg.left, width: POS.leftImg.w, height: POS.leftImg.h }}
           >
             <Image src="/images/aboutpage/aboutone.jpg" alt="" fill className="object-cover" priority sizes="380px" />
-            <div
-              className="absolute"
-              style={{ top: -POS.leftImg.top, left: -POS.leftImg.left, width: W }}
-            >
+            <div className="absolute" style={{ top: -POS.leftImg.top, left: -POS.leftImg.left, width: W }}>
               <HeadingBlock color="background" />
             </div>
           </div>
 
-          {/* Top-right image + white-text overlay */}
           <div
             className="absolute overflow-hidden"
             style={{ top: POS.topRightImg.top, left: POS.topRightImg.left, width: POS.topRightImg.w, height: POS.topRightImg.h }}
           >
             <Image src="/images/aboutpage/abouttwo.jpg" alt="" fill className="object-cover" priority sizes="340px" />
-            <div
-              className="absolute"
-              style={{ top: -POS.topRightImg.top, left: -POS.topRightImg.left, width: W }}
-            >
+            <div className="absolute" style={{ top: -POS.topRightImg.top, left: -POS.topRightImg.left, width: W }}>
               <HeadingBlock color="background" />
             </div>
           </div>
 
-          {/* Bottom-right image — bleeds off right edge, sits inside canvas */}
           <div
             className="absolute"
             style={{
@@ -117,57 +107,49 @@ export default function AboutHero() {
         </div>
       </div>
 
+      {/* ─────────────── Mobile / Landscape / iPad ─────────────── */}
+      <div className="lg:hidden relative overflow-hidden">
+        {/* Heading row */}
+        <div className="relative px-4 sm:px-6 md:px-8 pt-20 sm:pt-24 md:pt-28">
+          <div className="text-center">
+            <MobileHeadings color="primary" />
+          </div>
 
-{/* ─────────────── Mobile / Landscape / iPad ─────────────── */}
-<div className="lg:hidden relative overflow-hidden">
-  {/* Heading row — centered heading with top-right image overlapping */}
-  <div className="relative px-4 sm:px-6 md:px-8 pt-6 sm:pt-8 md:pt-10">
-    {/* Centered dark heading */}
-    <div className="text-center">
-      <MobileHeadings color="primary" />
-    </div>
+          {/* Top-right image — mobile overlay shifted right by switching base from right-4 to right-0 */}
+          <div className="absolute top-12 sm:top-14 md:top-16 -right-4 sm:-right-6 md:-right-8 w-[36%] sm:w-[34%] md:w-[32%] aspect-[4/3] overflow-hidden z-20">
+            <Image src="/images/aboutpage/abouttwo.jpg" alt="" fill className="object-cover" priority sizes="36vw" />
+            <div className="absolute top-[32px] sm:top-[40px] md:top-[48px] right-2 sm:right-6 md:right-8 w-screen text-center">
+              <MobileHeadings color="background" />
+            </div>
+          </div>
+        </div>
 
-{/* Top-right image — bleeds off right, sits below top with space above, overlays heading text */}
-<div className="absolute top-8 sm:top-10 md:top-12 -right-6 sm:-right-8 md:-right-10 w-[36%] sm:w-[34%] md:w-[32%] aspect-[4/3] overflow-hidden z-20">
-  <Image src="/images/aboutpage/abouttwo.jpg" alt="" fill className="object-cover" priority sizes="40vw" />
-  {/* White heading overlay — shifted up to compensate for image's top offset, so heading lands at correct page position */}
-  <div className="absolute -top-2 sm:-top-2 md:-top-2 right-6 sm:right-8 md:right-10 w-screen text-center">
-    <MobileHeadings color="background" />
-  </div>
-</div>
-  </div>
+        {/* Continuous content — left image floats left as before; bottom image now floats right after first sentence of p3 */}
+        <div className="px-4 sm:px-6 md:px-8 mt-4 font-body font-light text-primary text-[15px] leading-[26px] sm:text-[16px] sm:leading-[28px] md:text-[18px] md:leading-[30px] tracking-[-0.005em]">
+          <div className="float-left relative w-[42%] sm:w-[40%] md:w-[38%] aspect-[3/4] -ml-12 sm:-ml-14 md:-ml-16 -mt-[74px] sm:-mt-[90px] md:-mt-[112px] mr-4 sm:mr-5 md:mr-6 overflow-hidden z-10">
+            <Image src="/images/aboutpage/aboutone.jpg" alt="" fill className="object-cover" priority sizes="42vw" />
+            <div className="absolute -top-[62px] sm:-top-[80px] md:-top-[104px] left-[32px] w-screen text-center">
+              <MobileHeadings color="background" />
+            </div>
+          </div>
 
-  {/* Content row — left image + first paragraph side by side */}
-  <div className="relative px-4 sm:px-6 md:px-8 flex items-start gap-4 sm:gap-5 md:gap-6">
-    {/* Left image — bleeds off left, extends up into heading area, with white-overlay heading */}
-    <div className="relative w-[46%] sm:w-[44%] md:w-[42%] aspect-[5/8] sm:aspect-[5/8] md:aspect-[4/7] -ml-8 sm:-ml-10 md:-ml-12 -mt-16 sm:-mt-20 md:-mt-24 flex-shrink-0 overflow-hidden z-10">
-      <Image src="/images/aboutpage/aboutone.jpg" alt="" fill className="object-cover" priority sizes="46vw" />
-      {/* White heading overlay — positioned to align with the dark heading above */}
-      <div className="absolute -top-[56px] sm:-top-[74px] md:-top-[104px] left-8 sm:left-10 md:left-12 w-screen text-center">
-        <MobileHeadings color="background" />
+          <p className="mb-3 sm:mb-3 md:mb-4">
+            Hephzibah Luxe was born from years of experience long before it had a name. For over a decade, we planned informally — bringing together family celebrations, milestone moments, and meaningful gatherings with care, precision, and heart. What began as a natural calling evolved into a refined practice shaped by trust, relationships, and an understanding of what truly makes a celebration memorable.
+          </p>
+          <p className="mb-3 sm:mb-3 md:mb-4">
+            Rooted in faith and inspired by God, Hephzibah Luxe is guided by the belief that celebrations are sacred moments — worthy of intention, beauty, and excellence. Through long-standing relationships with a trusted network of vendors, we curate experiences that feel seamless, thoughtful, and elevated.
+          </p>
+
+          {/* Paragraph 3 — single <p>. Float-right declared after first sentence so first sentence is full-width above image, then text wraps left of image; section's overflow-hidden contains the float so image bottom = section bottom on iPad Pro. */}
+          <p>
+            Today, Hephzibah Luxe blends heritage with modern execution.{" "}
+            <span className="block float-right relative w-[40%] sm:w-[38%] md:w-[36%] aspect-[4/3] -mr-8 sm:-mr-10 md:-mr-12 ml-4 mb-0 overflow-hidden">
+              <Image src="/images/aboutpage/aboutthree.jpg" alt="" fill className="object-cover" sizes="40vw" />
+            </span>
+            Design sits at the heart of everything we do, combining creative direction with thoughtful planning systems to offer a more refined way to plan — one that prioritises clarity, collaboration, and ease, while honouring each couple&apos;s individuality.
+          </p>
+        </div>
       </div>
-    </div>
-
-    {/* First paragraph — sits beside left image */}
-    <p className="font-body font-light text-primary text-[15px] leading-[26px] sm:text-[16px] sm:leading-[28px] md:text-[18px] md:leading-[30px] tracking-[-0.005em] flex-1">
-      Hephzibah Luxe was born from years of experience long before it had a name. For over a decade, we planned informally — bringing together family celebrations, milestone moments, and meaningful gatherings with care, precision, and heart. What began as a natural calling evolved into a refined practice shaped by trust, relationships, and an understanding of what truly makes a celebration memorable.
-    </p>
-  </div>
-
-{/* Remaining paragraphs — full width */}
-<div className="px-4 sm:px-6 md:px-8 mt-3 sm:mt-4 md:mt-4 font-body font-light text-primary text-[15px] leading-[26px] sm:text-[16px] sm:leading-[28px] md:text-[18px] md:leading-[30px] tracking-[-0.005em] relative">
-  <p className="mb-3 sm:mb-4">
-    Rooted in faith and inspired by God, Hephzibah Luxe is guided by the belief that celebrations are sacred moments — worthy of intention, beauty, and excellence. Through long-standing relationships with a trusted network of vendors, we curate experiences that feel seamless, thoughtful, and elevated.
-  </p>
-  <p>
-    {/* Image floats right at top of paragraph; text wraps left + below image */}
-    <span className="block float-right relative w-[40%] sm:w-[38%] md:w-[36%] aspect-[4/3] -mr-4 sm:-mr-6 md:-mr-8 ml-4 mb-0 overflow-hidden">
-      <Image src="/images/aboutpage/aboutthree.jpg" alt="" fill className="object-cover" sizes="40vw" />
-    </span>
-    Today, Hephzibah Luxe blends heritage with modern execution. Design sits at the heart of everything we do, combining creative direction with thoughtful planning systems to offer a more refined way to plan — one that prioritises clarity, collaboration, and ease, while honouring each couple&apos;s individuality.
-  </p>
-</div>
-</div>
     </section>
   );
 }

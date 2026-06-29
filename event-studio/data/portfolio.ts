@@ -333,24 +333,68 @@ export const portfolioEvents: PortfolioEvent[] = [
     year: 2026,
     title: "Lagos State Government (OPL& CE) MSME Engagement Forum",
     coverImage: "/images/portfoliopage/portfoliofourteen.jpg",
-  },
-  {
-    slug: "catherine-esai",
-    type: "multi-day",
-    category: "Weddings",
-    location: "Lagos, Nigeria",
-    year: 2026,
-    title: "Catherine & Esai's Nigerian & Togolese Fusion Wedding",
-    coverImage: "/images/portfoliopage/portfoliofifteen.jpg",
-  },
-  {
-    slug: "stephanie-30th",
-    type: "single-day",
-    category: "Birthdays",
-    location: "Lagos, Nigeria",
-    year: 2023,
-    title: "Stephanie's Modern 30th Birthday Dinner Soirée",
-    coverImage: "/images/portfoliopage/portfoliosixteen.jpg",
+    description: [
+    "This corporate seminar was designed to bring together stakeholders for a meaningful conversation around social responsibility and community impact. Hosted in collaboration with the Lagos State Government, the event welcomed guests for an afternoon of discussion, knowledge sharing, and collective reflection.",
+    "Hephzibah Luxe supported the planning and coordination of the experience, ensuring a smooth guest journey from arrival through the programme. From registration and seating flow to hospitality and on-site coordination, every detail was carefully managed to create an organised and welcoming environment for both speakers and attendees.",
+    "The result was a thoughtful and purposeful gathering that prioritised connection, dialogue, and a shared vision for positive community engagement.",
+  ],
+  gallery: [
+    {
+      type: "images",
+      images: [
+        "/images/portfoliopage/lagosone.jpg",
+        "/images/portfoliopage/lagostwo.jpg",
+        "/images/portfoliopage/lagosthree.jpg",
+      ],
+    },
+    {
+      type: "images",
+      images: [
+        "/images/portfoliopage/lagosfour.jpg",
+      ],
+    },
+    {
+      type: "images",
+      images: [
+        "/images/portfoliopage/lagosfive.jpg",
+        "/images/portfoliopage/lagossix.jpg",
+      ],
+    },
+    {
+      type: "images",
+      images: [
+        "/images/portfoliopage/lagosseven.jpg",
+      ],
+    },
+    {
+      type: "testimonial",
+      quote:
+        "Working with Hephzibah Luxe was a delightful experience. Despite the short notice and tight budget, the team ensured the event was well organised and ran smoothly from start to finish. Their coordination and attention to detail helped create a welcoming and professional atmosphere for our guests. We truly appreciated their commitment and calm execution throughout the process. ",
+      attribution: "Mrs. Abimbola, OPL&CE Manager",
+    },
+    {
+      type: "images",
+      images: [
+        "/images/portfoliopage/lagoseight.jpg",
+      ],
+    },
+    {
+      type: "images",
+      images: [
+        "/images/portfoliopage/lagosnine.jpg",
+        "/images/portfoliopage/lagosten.jpg",
+      ],
+    },
+    {
+      type: "images",
+      images: [
+        "/images/portfoliopage/lagoseleven.jpg",
+        "/images/portfoliopage/lagostwelve.jpg",
+      ],
+      ratios: [3, 2],
+    },
+    { type: "images", images: ["/images/portfoliopage/lagosthirteen.jpg"] },
+  ],
   },
 ];
 
