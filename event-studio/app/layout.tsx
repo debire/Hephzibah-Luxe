@@ -2,9 +2,6 @@ import type { Metadata } from "next";
 import { Newsreader, Lato } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "@/components/layout/Navbar";
-import LenisProvider from "@/components/layout/LenisProvider";
-import Footer from "@/components/layout/Footer";
 
 
 
@@ -57,11 +54,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${editorsNote.variable} ${newsreader.variable} ${lato.variable}`}>
       <body className="font-body bg-background text-primary antialiased">
-        <LenisProvider>
-          <Navbar />
           {children}
-          <Footer />
-        </LenisProvider>
       </body>
     </html>
   );
