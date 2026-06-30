@@ -37,12 +37,12 @@ function MobileHeadings({ color }: { color: "primary" | "background" }) {
   return (
     <>
       <h1
-        className={`font-display font-thin ${cls} text-[52px] leading-[58px] sm:text-[68px] sm:leading-[74px] md:text-[88px] md:leading-[96px] tracking-[-0.005em] whitespace-nowrap`}
+        className={`font-display font-thin ${cls} text-[40px] leading-[46px] sm:text-[68px] sm:leading-[74px] md:text-[88px] md:leading-[96px] tracking-[-0.005em] whitespace-nowrap`}
       >
         ABOUT <span className="italic">the</span> BRAND
       </h1>
       <h2
-        className={`mt-1 sm:mt-1.5 md:mt-2 font-display font-thin italic ${cls} text-[52px] leading-[58px] sm:text-[68px] sm:leading-[74px] md:text-[88px] md:leading-[96px] whitespace-nowrap`}
+        className={`mt-1 sm:mt-1.5 md:mt-2 font-display font-thin italic ${cls} text-[40px] leading-[46px] sm:text-[68px] sm:leading-[74px] md:text-[88px] md:leading-[96px] whitespace-nowrap`}
       >
         Hephzibah Luxe
       </h2>
@@ -115,20 +115,21 @@ export default function AboutHero() {
             <MobileHeadings color="primary" />
           </div>
 
-          {/* Top-right image — mobile overlay shifted right by switching base from right-4 to right-0 */}
-          <div className="absolute top-12 sm:top-14 md:top-16 -right-4 sm:-right-6 md:-right-8 w-[36%] sm:w-[34%] md:w-[32%] aspect-[4/3] overflow-hidden z-20">
+          {/* Top-right image — overlay right-4 matches image -right-4 (cancels bleed) so white text centers on viewport same as dark text */}
+          <div className="absolute top-6 sm:top-14 md:top-16 -right-4 sm:-right-6 md:-right-8 w-[36%] sm:w-[34%] md:w-[32%] aspect-[4/3] overflow-hidden z-20">
             <Image src="/images/aboutpage/abouttwo.jpg" alt="" fill className="object-cover" priority sizes="36vw" />
-            <div className="absolute top-[32px] sm:top-[40px] md:top-[48px] right-2 sm:right-6 md:right-8 w-screen text-center">
+            <div className="absolute top-[56px] sm:top-[40px] md:top-[48px] right-4 sm:right-6 md:right-8 w-screen text-center">
               <MobileHeadings color="background" />
             </div>
           </div>
         </div>
 
-        {/* Continuous content — left image floats left as before; bottom image now floats right after first sentence of p3 */}
+        {/* Continuous content */}
         <div className="px-4 sm:px-6 md:px-8 mt-4 font-body font-light text-primary text-[15px] leading-[26px] sm:text-[16px] sm:leading-[28px] md:text-[18px] md:leading-[30px] tracking-[-0.005em]">
-          <div className="float-left relative w-[42%] sm:w-[40%] md:w-[38%] aspect-[3/4] -ml-12 sm:-ml-14 md:-ml-16 -mt-[74px] sm:-mt-[90px] md:-mt-[112px] mr-4 sm:mr-5 md:mr-6 overflow-hidden z-10">
+          {/* Left float image — overlay -top-[46px] (was 54), brings white h2 down to land on dark h2 */}
+          <div className="float-left relative w-[42%] sm:w-[40%] md:w-[38%] aspect-[3/4] -ml-12 sm:-ml-14 md:-ml-16 -mt-[62px] sm:-mt-[90px] md:-mt-[112px] mr-4 sm:mr-5 md:mr-6 overflow-hidden z-10">
             <Image src="/images/aboutpage/aboutone.jpg" alt="" fill className="object-cover" priority sizes="42vw" />
-            <div className="absolute -top-[62px] sm:-top-[80px] md:-top-[104px] left-[32px] w-screen text-center">
+            <div className="absolute -top-[50px] sm:-top-[80px] md:-top-[104px] left-[32px] w-screen text-center">
               <MobileHeadings color="background" />
             </div>
           </div>
@@ -140,14 +141,30 @@ export default function AboutHero() {
             Rooted in faith and inspired by God, Hephzibah Luxe is guided by the belief that celebrations are sacred moments — worthy of intention, beauty, and excellence. Through long-standing relationships with a trusted network of vendors, we curate experiences that feel seamless, thoughtful, and elevated.
           </p>
 
-          {/* Paragraph 3 — single <p>. Float-right declared after first sentence so first sentence is full-width above image, then text wraps left of image; section's overflow-hidden contains the float so image bottom = section bottom on iPad Pro. */}
-          <p>
+          {/* Paragraph 3 — mobile splits text into two parts so it wraps ABOVE and BESIDE the absolute bottom image (never under). sm+: hidden/visible flip restores the original single-paragraph + float behavior. */}
+
+          {/* MOBILE ONLY: first part — full width, wraps above the image */}
+          <p className="sm:hidden mb-0">
+            Today, Hephzibah Luxe blends heritage with modern execution. Design sits at the heart of everything we do, combining creative direction with thoughtful planning systems to offer a more refined way to plan — one that prioritises clarity,{" "}
+          </p>
+          {/* MOBILE ONLY: second part — right column reserved so this text sits beside the image */}
+          <p className="pb-12 sm:hidden pr-[44%]">
+            collaboration, and ease, while honouring each couple&apos;s individuality.
+          </p>
+
+          {/* sm+ ONLY: original single paragraph with float-right span — iPad / iPad Pro / desktop behavior unchanged */}
+          <p className="hidden sm:block">
             Today, Hephzibah Luxe blends heritage with modern execution.{" "}
-            <span className="block float-right relative w-[40%] sm:w-[38%] md:w-[36%] aspect-[4/3] -mr-8 sm:-mr-10 md:-mr-12 ml-4 mb-0 overflow-hidden">
+            <span className="float-right relative sm:w-[38%] md:w-[30%] aspect-[4/3] sm:-mr-10 md:-mr-12 ml-4 mb-0 overflow-hidden block">
               <Image src="/images/aboutpage/aboutthree.jpg" alt="" fill className="object-cover" sizes="40vw" />
             </span>
             Design sits at the heart of everything we do, combining creative direction with thoughtful planning systems to offer a more refined way to plan — one that prioritises clarity, collaboration, and ease, while honouring each couple&apos;s individuality.
           </p>
+        </div>
+
+        {/* MOBILE ONLY — bottom-right image pinned to the lg:hidden wrapper's bottom-right corner. Section grows to contain text only; image overlays the bottom-right corner with no gap below. */}
+        <div className="sm:hidden absolute bottom-0 -right-8 w-[40%] aspect-[4/3] overflow-hidden z-10">
+          <Image src="/images/aboutpage/aboutthree.jpg" alt="" fill className="object-cover" sizes="40vw" />
         </div>
       </div>
     </section>
