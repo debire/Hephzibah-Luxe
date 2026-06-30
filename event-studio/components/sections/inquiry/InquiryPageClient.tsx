@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import InquiryHero from "@/components/sections/inquiry/InquiryHero";
 import InquiryForm from "@/components/sections/inquiry/InquiryForm";
+import FAQSection from "@/components/sections/inquiry/FAQSection";
 import Instagram from "@/components/sections/Instagram";
 
 export default function InquiryPageClient() {
@@ -64,6 +65,7 @@ export default function InquiryPageClient() {
     <>
       <InquiryHero />
       <InquiryForm onSubmitted={handleSubmitted} />
+      <FAQSection />
       <Instagram />
     </>
   );

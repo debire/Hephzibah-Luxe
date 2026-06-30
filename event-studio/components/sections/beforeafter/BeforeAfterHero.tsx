@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function BeforeAfterHero() {
     return (
-        <section className="relative w-full h-[40vh] sm:h-[50vh] md:h-[50vh] lg:h-screen overflow-hidden">
+        <section className="relative w-full h-[40vh] sm:h-[50vh] md:h-[50vh] lg:h-[100vh] xl:h-[100vh] overflow-hidden">
             {/* Split background images */}
             <div className="absolute inset-0 flex">
                 <div

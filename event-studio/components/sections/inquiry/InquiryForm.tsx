@@ -61,7 +61,14 @@ export default function InquiryForm({ onSubmitted }: InquiryFormProps) {
 
           <p className="mt-4 font-body font-light text-primary text-[15px] leading-[24px] sm:text-[16px] sm:leading-[26px] md:text-[18px] md:leading-[28px] lg:text-[16px] lg:leading-[25px] xl:text-[18px] xl:leading-[28px] 2xl:text-[20px] 2xl:leading-[30px]">
             Have a quick question? View our{" "}
-            <Link href="#faqs" className="font-semibold underline">
+            <Link
+              href="#faqs"
+              className="font-semibold underline"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("faqs")?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
               FAQs
             </Link>{" "}
             below before submitting your inquiry.
@@ -196,9 +203,8 @@ export default function InquiryForm({ onSubmitted }: InquiryFormProps) {
               <button
                 type="submit"
                 disabled={!allFilled}
-                className={`group flex items-center justify-between gap-6 px-8 py-4 xl:px-10 xl:py-5 2xl:px-12 2xl:py-6 transition-colors ${
-                  allFilled ? "bg-secondary hover:opacity-90" : "bg-[#778472]"
-                }`}
+                className={`group flex items-center justify-between gap-6 px-8 py-4 xl:px-10 xl:py-5 2xl:px-12 2xl:py-6 transition-colors ${allFilled ? "bg-secondary hover:opacity-90" : "bg-[#778472]"
+                  }`}
               >
                 <span className="font-sans font-light tracking-[0.15em] uppercase text-background text-[16px] sm:text-[17px] md:text-[18px] lg:text-[16px] xl:text-[18px] 2xl:text-[20px]">
                   Send Message
