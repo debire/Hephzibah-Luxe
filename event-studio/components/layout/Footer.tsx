@@ -57,7 +57,7 @@ export default function Footer() {
                 {/* Block 2: tagline + address */}
                 <div className="mt-8 sm:mt-10 md:mt-10 lg:mt-12 xl:mt-14 flex flex-col lg:flex-row lg:justify-between gap-6 sm:gap-8 md:gap-10 lg:gap-16 xl:gap-20 2xl:gap-24">
                     {/* Tagline */}
-                    <div className="font-body font-normal tracking-[-0.01em] text-background max-w-[480px] xl:max-w-[560px] 2xl:max-w-[640px] text-[12px] leading-[16px] sm:text-[14px] sm:leading-[18px] md:text-[15px] md:leading-[22px] lg:text-[16px] lg:leading-[27px] xl:text-[18px] xl:leading-[29px] 2xl:text-[20px] 2xl:leading-[31px]">
+                    <div className="font-body font-normal tracking-[-0.01em] text-background max-w-[480px] xl:max-w-[560px] 2xl:max-w-[640px] text-[13px] leading-[16px] sm:text-[14px] sm:leading-[18px] md:text-[18px] md:leading-[22px] lg:text-[18px] lg:leading-[27px] xl:text-[18px] xl:leading-[29px] 2xl:text-[20px] 2xl:leading-[31px]">
                         <p>
                             Crafting Refined, Beautiful, And Meaningful Celebrations — From Intimate Moments To Grand Occasions. Designed With Intention, Executed With Elegance.
                         </p>
@@ -65,7 +65,7 @@ export default function Footer() {
                     </div>
 
                     {/* Address */}
-                    <div className="font-body font-normal tracking-[-0.01em] text-background space-y-1 sm:space-y-1.5 md:space-y-1.5 lg:space-y-2 text-[12px] leading-[16px] sm:text-[14px] sm:leading-[18px] md:text-[15px] md:leading-[22px] lg:text-[16px] lg:leading-[27px] xl:text-[18px] xl:leading-[29px] 2xl:text-[20px] 2xl:leading-[31px]">
+                    <div className="font-body font-normal tracking-[-0.01em] text-background space-y-1 sm:space-y-1.5 md:space-y-1.5 lg:space-y-2 text-[13px] leading-[16px] sm:text-[14px] sm:leading-[18px] md:text-[18px] md:leading-[22px] lg:text-[18px] lg:leading-[27px] xl:text-[18px] xl:leading-[29px] 2xl:text-[20px] 2xl:leading-[31px]">
                         <p>29 Adeniran Ogunsanya, Surulere, Lagos, Nigeria</p>
                         <p>Monday - Friday: 9:00am to 5:00pm</p>
                         <p>Closed: After Dec 18th &nbsp;&amp; on Public Holidays</p>

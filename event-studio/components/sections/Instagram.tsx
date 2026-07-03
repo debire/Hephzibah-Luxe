@@ -21,7 +21,7 @@ export default function Instagram() {
 
           {/* Desktop button */}
           <Link
-            href="https://instagram.com"
+            href="https://www.instagram.com/hephzibahluxe"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden lg:inline-flex group items-center justify-between gap-6 self-start border border-primary px-6 py-4 xl:px-7 xl:py-5 2xl:px-8 2xl:py-6 transition-colors hover:bg-primary hover:text-background min-w-[340px] xl:min-w-[380px] 2xl:min-w-[420px]"
@@ -56,7 +56,7 @@ export default function Instagram() {
 
         {/* Mobile button */}
         <Link
-          href="https://instagram.com"
+          href="https://www.instagram.com/hephzibahluxe"
           target="_blank"
           rel="noopener noreferrer"
           className="lg:hidden mt-8 md:mt-10 group flex items-center justify-center gap-4 border border-primary px-6 py-4 md:px-7 md:py-5 transition-colors hover:bg-primary"
