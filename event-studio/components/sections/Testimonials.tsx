@@ -12,7 +12,7 @@ const testimonials = [
         quote:
             "“Working with Hephzibah Luxe was a wonderful experience. Despite the short notice and tight budget, the team ensured the event was well organised and ran smoothly from start to finish. Their coordination and attention to detail helped create a welcoming and professional atmosphere for our guests. We truly appreciated their commitment and calm execution throughout the process.”",
         cta: "View their Forum",
-        href: "/portfolio",
+        href: "/portfolio/msme-forum",
     },
     {
         image: "/images/testimonial/testimonialtwo.jpg",
@@ -21,7 +21,7 @@ const testimonials = [
         quote:
             "“I wanted something simple, but meaningful — and that's exactly what this was. Every detail felt intentional, and the photos captured me in such a beautiful and authentic way. There was a quiet attention to detail that made me feel completely at ease, and that really reflected in the final images. What I loved most is that the focus never shifted away from me. It truly felt like the perfect way to step into fifty.”",
         cta: "View her Birthday",
-        href: "/portfolio",
+        href: "/portfolio/golden-50th",
     },
     {
         image: "/images/testimonial/testimonialthree.jpg",

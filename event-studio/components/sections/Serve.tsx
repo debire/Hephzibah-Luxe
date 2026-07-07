@@ -9,7 +9,7 @@ export default function Serve() {
         <div className="lg:hidden flex flex-col px-6 sm:px-8 md:px-10 py-6 sm:py-8 md:py-12">
           <div className="relative w-full">
             <Image
-              src="/images/services/mobileserve.jpg"
+              src="/images/services/mobileserve.svg"
               alt="How we serve you"
               width={800}
               height={500}
@@ -55,7 +55,7 @@ export default function Serve() {
           {/* Left: image, full-bleed to the left edge */}
           <div className="relative -ml-12 xl:-ml-16 2xl:-ml-20 self-stretch">
             <Image
-              src="/images/services/serve.jpg"
+              src="/images/services/serve.svg"
               alt="How we serve you"
               fill
               className="object-cover object-top"

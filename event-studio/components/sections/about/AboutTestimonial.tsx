@@ -30,7 +30,7 @@ export default function AboutTestimonial() {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 md:px-12 lg:pl-[180px] lg:pr-[80px] xl:pl-[240px] xl:pr-[140px] 2xl:pl-[280px] 2xl:pr-[160px]">
+            <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 md:px-12 lg:pl-[180px] lg:pr-[60px] xl:pl-[110px] xl:pr-[130px] 2xl:pl-[70px] 2xl:pr-[70px]">
                 <div className="pl-10 pr-4 sm:pl-16 sm:pr-16 md:pl-24 md:pr-10 lg:pl-0 lg:pr-0">
                     <p className="font-display font-thin text-background text-[24px] leading-[38px] sm:text-[28px] sm:leading-[44px] md:text-[34px] md:leading-[50px] lg:text-[45px] lg:leading-[55px] xl:text-[52px] xl:leading-[64px] 2xl:text-[60px] 2xl:leading-[72px] mb-8 sm:mb-10 lg:mb-10 xl:mb-12 2xl:mb-14">
                         &ldquo;I walked into a room filled with love, laughter, and surprises I never saw coming. The celebration was seamless, and beautifully put together. My wife and Hephzibah Luxe created an evening that was deeply meaningful and beyond my wildest dreams — a birthday I will never forget. I am truly grateful to the Hephzibah Luxe team.&rdquo;
