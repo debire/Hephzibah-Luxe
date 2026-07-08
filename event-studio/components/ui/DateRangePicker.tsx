@@ -172,7 +172,7 @@ export default function DateRangePicker({
         className={`absolute left-4 pointer-events-none transition-all duration-200 font-sans font-light ${
           isFloating
             ? "top-0 -translate-y-1/2 text-[12px] bg-background px-1 text-[#778472]"
-            : "top-1/2 -translate-y-1/2 text-[18px] text-[#778472]"
+            : "top-1/2 -translate-y-1/2 text-[16px] text-[#778472]"
         }`}
       >
         {label}
