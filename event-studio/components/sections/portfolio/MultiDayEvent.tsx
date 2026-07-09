@@ -33,7 +33,7 @@ export default function MultiDayEvent({ event }: { event: PortfolioEvent }) {
             {event.description.map((para, idx) => (
               <p
                 key={idx}
-                className="font-body font-light text-primary text-[14px] leading-[24px] sm:text-[15px] sm:leading-[26px] md:text-[16px] md:leading-[28px] lg:text-[15px] lg:leading-[25px] xl:text-[17px] xl:leading-[28px] 2xl:text-[18px] 2xl:leading-[30px]"
+                className="font-body font-light text-primary text-[15px] leading-[24px] sm:text-[15px] sm:leading-[26px] md:text-[16px] md:leading-[28px] lg:text-[15px] lg:leading-[25px] xl:text-[18px] xl:leading-[28px] 2xl:text-[18px] 2xl:leading-[30px]"
               >
                 {para}
               </p>
